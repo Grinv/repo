@@ -72,3 +72,19 @@ console.log(`${dice.faceAmount}${dice.name}`)
 
 }
 play1(DICES.d10)
+
+
+function birthday(years) {
+
+    const NOWDATE = new Date() 
+    const NOWYEARS = NOWDATE.getFullYear()
+    const NOWMONTH = NOWDATE.getMonth()
+    const NOWDAYS = NOWDATE.getDate()
+
+    const USER = new Date(years)
+
+    if((NOWYEARS - USER.getFullYear()) >= 14 && NOWMONTH >= USER.getMonth() && NOWDAYS >= USER.getDate()) return true
+    else return false
+}
+
+console.log(birthday('2022-01-01'));
