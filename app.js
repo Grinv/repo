@@ -127,3 +127,42 @@ setInterval(() => {
     
     timer(newYear)
 }, 1000);
+
+
+
+class Pers {
+    constructor(race, name, lang) {
+      this.race = race;
+      this.name = name;
+      this.lang = lang;
+    }
+    speak() {
+      console.log(`${this.lang}: ${this.name}`);
+    }
+  }
+  
+  class Orc extends Pers {
+    weapon = "Топор";
+  
+    punch() {
+      console.log(`${this.name} УДАРИЛ ${this.weapon}`);
+    }
+  }
+  
+  class Elf extends Pers {
+    spell = "METAMORPHOSIS";
+  
+    createspell() {
+      console.log(`${this.name} Coздал заклинание ${this.spell}`);
+    }
+  }
+  
+  const person = new Pers();
+  const orc = new Orc("Орк", "Тралл", "Лок Тар'огар");
+  const elf = new Elf("Эльф", "Иллидан", "Вы не готовы!");
+  
+  orc.punch();
+  orc.speak();
+  
+  elf.createspell()
+  elf.speak()
