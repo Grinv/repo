@@ -88,3 +88,42 @@ function birthday(years) {
 }
 
 console.log(birthday('2022-01-01'));
+
+
+const newYear = '2023-12-31 00:00:00'
+
+const month = document.querySelector('#month')
+const days = document.querySelector('#days')
+const hours = document.querySelector('#hours')
+const minute = document.querySelector('#minutes')
+const second = document.querySelector('#seconds')
+
+
+function timer(time) {
+    const nowData = new Date()
+    const newYearDate = new Date(time)
+
+    const lastYear = newYearDate - nowData
+
+    let  monthLeft = newYearDate.getMonth() - nowData.getMonth()
+    let daysLeft = Math.floor(lastYear / 86_400_000)
+    let hoursLeft = Math.floor(lastYear / 1000 / 60 / 60 ) % 24
+    let minutesLeft = Math.floor(lastYear / 1000 / 60 ) % 60
+    let secondsLeft = Math.floor(lastYear / 1000 ) % 60
+    if(hoursLeft > 10)  hoursLeft
+
+
+  
+    month.innerHTML = monthLeft  < 10 ? '0' + monthLeft : monthLeft
+    days.innerHTML = daysLeft  < 10 ? '0' + daysLeft : daysLeft
+    hours.innerHTML = hoursLeft < 10 ? '0' + hoursLeft : hoursLeft
+    minute.innerHTML = minutesLeft < 10 ? '0' + minutesLeft : minutesLeft
+    second.innerHTML = secondsLeft < 10 ? '0' + secondsLeft : secondsLeft
+  
+}
+timer(newYear)
+
+setInterval(() => {
+    
+    timer(newYear)
+}, 1000);
