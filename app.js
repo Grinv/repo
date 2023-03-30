@@ -166,3 +166,33 @@ class Pers {
   
   elf.createspell()
   elf.speak()
+
+
+  class Car {
+    #brand;
+    #model;
+    #run;
+    constructor(brand, model, run) {
+      this.#brand = brand;
+      this.#model = model;
+      this.#run = run;
+    }
+  
+    info() {
+      console.log(
+        `brand: ${this.#brand}, model: ${this.#model}, run: ${this.#run}`
+      );
+    }
+    get createRun() {
+      return this.#run;
+    }
+  
+    set createRun(run) {
+      this.#run = run;
+    }
+  }
+  
+  let car = new Car("Mazda", "3", "150000");
+  
+  car.createRun = 12000;
+  car.info();
